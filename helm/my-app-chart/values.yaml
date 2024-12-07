@@ -8,7 +8,7 @@ image:
   repository: okeymcokoli/my-app
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v3"
+  tag: "12216421107"
 
 ingress:
   enabled: false
