@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-app-ingress
+  labels:
+    app: my-app
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /  # Optional: If you're using NGINX ingress controller, rewrite the URL path
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: my-app.local  # Replace with your domain name
+      http:
+        paths:
+          - path: /  # Root path, can be changed based on your needs
+            pathType: Prefix
+            backend:
+              service:
+                name: my-app-service  # The name of the service you want to expose
+                port:
+                  number: 80  # Port on the service to route traffic to

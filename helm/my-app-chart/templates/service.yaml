@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-service
+  labels:
+    app: my-app
+spec:
+  selector:
+    app: my-app  # Matches the app label of the deployment pods
+  ports:
+    - protocol: TCP
+      port: 80         # Port exposed by the service
+      targetPort: 8080  # Port on the container to forward traffic to
+  type: "NodePort"  # Use "ClusterIP" for internal-only, "LoadBalancer" for external access
