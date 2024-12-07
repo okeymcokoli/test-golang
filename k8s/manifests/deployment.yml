@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: my-app-container
-          image: okeymcokoli/test-app:v2  # Replace with your actual image name and tag
+          image: okeymcokoli/test-app:v3  # Replace with your actual image name and tag
           ports:
             - containerPort: 8080  # Port the container listens on
           # env:  # Optional: environment variables if needed
